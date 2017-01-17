@@ -1,1 +1,42 @@
-<p>Welcome to public index page</p>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+  <div id="body">
+    {% block body %}
+      <div class"topHeader">
+          {% block upperheading%} {% endblock}
+
+      </div>
+
+       <p>Welcome to public index page</p>
+      <div class="content">
+        {% block content %}
+          <div class="notificationArea">
+            {% block fornotification%} {% endblock}
+          </div>
+          <div class="activityArea">
+            {% block foractivity%} {% endblock}
+          </div>
+           <div class="searchArea">
+            {% block forsearch%} {% endblock}
+          </div>
+           <div class="dashboardArea">
+            {% block fordashboard%} {% endblock}
+          </div>
+
+
+          {% endblock %}
+      </div>
+
+    {% endblock %}
+  </div>
+</body>
+</html>
+
+
+
+
+
