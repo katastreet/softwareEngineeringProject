@@ -1,0 +1,61 @@
+
+
+#body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+.topHeader {
+    position: absolute;
+    max-height: 10%;
+    width: 100%;
+    background-color: black;
+}
+
+.content {
+
+}
+
+
+.notificationArea {
+    position: absolute;
+    left: 65%;
+    width: 35%;
+    top: 10%;
+    background-color: red;
+    height: 40%;
+}
+
+
+
+.activityArea {
+     position: absolute;
+    left: 65%;
+    width:35%;
+    top: 50%;
+    background-color: blue;
+    height: 40%;
+}
+
+
+.searchArea {
+
+    position: absolute;
+    left: 10%;
+    height: 20%;
+    top: 20%;
+    background-color: aqua;
+    width: 50%;
+}
+
+.dashboardArea {
+      position: absolute;
+    left: 10%;
+
+    height: 60%;
+    top: 40%;
+    background-color: green;
+    width: 50%;
+}
