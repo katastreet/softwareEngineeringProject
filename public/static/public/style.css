@@ -1,6 +1,7 @@
-
-
-#body {
+html{
+    height: 100%;
+}
+body {
     height: 100%;
     width: 100%;
     position: relative;
@@ -10,20 +11,18 @@
 .topHeader {
     position: absolute;
     max-height: 10%;
+    top: 0%;
+    left:0%;
     width: 100%;
     background-color: black;
-}
-
-.content {
-
 }
 
 
 .notificationArea {
     position: absolute;
+    top: 10%;
     left: 65%;
     width: 35%;
-    top: 10%;
     background-color: red;
     height: 40%;
 }
@@ -31,10 +30,10 @@
 
 
 .activityArea {
-     position: absolute;
+    position: absolute;
+    top: 50%;
     left: 65%;
     width:35%;
-    top: 50%;
     background-color: blue;
     height: 40%;
 }
@@ -54,8 +53,8 @@
       position: absolute;
     left: 10%;
 
-    height: 60%;
-    top: 40%;
+    height: 40%;
+    top: 50%;
     background-color: green;
     width: 50%;
 }

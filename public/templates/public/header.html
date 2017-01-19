@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>{% block title %}{% endblock %}</title>
-	<meta charset="utf-8" />
+  	<title>{% block title %}{% endblock title%}</title>
+	{% block stylesheet %}{% endblock stylesheet %}
 </head>
+<body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
+	<div id="body">
+      <div class="topHeader">
+          {% block upperheading %} {% endblock upperheading %}
+	  </div>
+	  <div class="notificationArea">
+            {% block fornotification%} {% endblock fornotification %}
+		</div>
+		<div class="activityArea">
+            {% block foractivity %} {% endblock foractivity%}
+          </div>
 
-<body class="body" style="background-color:#f6f6f6">
-	<div>
-	   {% block content %}
-	   {% endblock %}
+           <div class="searchArea">
+            {% block forsearch%} {% endblock forsearch%}
+          </div>
+
+           <div class="dashboardArea">
+            {% block fordashboard%} {% endblock fordashboard%}
+          </div>
+
 	</div>
 </body>
-
 </html>

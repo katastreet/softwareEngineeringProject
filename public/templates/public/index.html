@@ -1,47 +1,27 @@
-
 {% extends "public/header.html" %}
+{% load static %}
 
-{% block title %}Welcome to Store{% endblock %}
-{% block content %}
+{% block title %} Welcome to Store {% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'public/style.css' %}" />
+{% endblock stylesheet %}
+
+{% block upperheading %}<p>Store Heading</p>{% endblock upperheading %}
+
+{% block fornotification %}
+<p>notification</p>
+{% endblock fornotification %}
+
+{% block foractivity %}
+<p>Activities</p>
+{% endblock foractivity %}
+
+{% block forsearch %}
 {% include "public/includes/snippet.html" %}
 <p> Welcome to public index page
-{% endblock %}
-{% comment %}
-<head>
+</p>{% endblock forsearch%}
 
-    <link rel="stylesheet" href="css/style.css"/>
-  <title>{% block title %}{% endblock %}</title>
-</head>
-<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
-  <div id="body">
-    {% block body %}
-      <div class="topHeader">
-          {% block upperheading%} {% endblock}
-
-      </div>
-
-       <p>Welcome to public index page</p>
-      <div class="content">
-        {% block content %}
-          <div class="notificationArea">
-            {% block fornotification%} {% endblock}
-          </div>
-          <div class="activityArea">
-            {% block foractivity%} {% endblock}
-          </div>
-           <div class="searchArea">
-            {% block forsearch%} {% endblock}
-          </div>
-           <div class="dashboardArea">
-            {% block fordashboard%} {% endblock}
-          </div>
-
-
-          {% endblock %}
-      </div>
-
-    {% endblock %}
-  </div>
-</body>
-
-{% endcomment %}
+{% block fordashboard %}
+<p> Dashboard </p>
+{% endblock fordashboard %}
