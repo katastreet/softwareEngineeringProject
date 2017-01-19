@@ -1,9 +1,47 @@
+
 {% extends "public/header.html" %}
 
 {% block title %}Welcome to Store{% endblock %}
 {% block content %}
-<p>Welcome to public index page</p>
-
 {% include "public/includes/snippet.html" %}
-
+<p> Welcome to public index page
 {% endblock %}
+{% comment %}
+<head>
+
+    <link rel="stylesheet" href="css/style.css"/>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+  <div id="body">
+    {% block body %}
+      <div class="topHeader">
+          {% block upperheading%} {% endblock}
+
+      </div>
+
+       <p>Welcome to public index page</p>
+      <div class="content">
+        {% block content %}
+          <div class="notificationArea">
+            {% block fornotification%} {% endblock}
+          </div>
+          <div class="activityArea">
+            {% block foractivity%} {% endblock}
+          </div>
+           <div class="searchArea">
+            {% block forsearch%} {% endblock}
+          </div>
+           <div class="dashboardArea">
+            {% block fordashboard%} {% endblock}
+          </div>
+
+
+          {% endblock %}
+      </div>
+
+    {% endblock %}
+  </div>
+</body>
+
+{% endcomment %}
