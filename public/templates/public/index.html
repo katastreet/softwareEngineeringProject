@@ -1,27 +1,11 @@
 {% extends "public/header.html" %}
-{% load static %}
 
 {% block title %} Welcome to Store {% endblock title %}
 
-{% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="{% static 'public/style.css' %}" />
-{% endblock stylesheet %}
+{% block content %}
+<div class="jumbotron" style="text-align:center;">
+      <h1>Public Store</h1>
+      <p>Search all buyable and leasable products</p>
+    </div>
 
-{% block upperheading %}<p>Store Heading</p>{% endblock upperheading %}
-
-{% block fornotification %}
-<p>notification</p>
-{% endblock fornotification %}
-
-{% block foractivity %}
-<p>Activities</p>
-{% endblock foractivity %}
-
-{% block forsearch %}
-{% include "public/includes/snippet.html" %}
-<p> Welcome to public index page
-</p>{% endblock forsearch%}
-
-{% block fordashboard %}
-<p> Dashboard </p>
-{% endblock fordashboard %}
+{% endblock content %}

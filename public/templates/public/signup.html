@@ -1,0 +1,14 @@
+{% extends "public/header.html" %}
+
+{% block title %} SignUp Page {% endblock title %}
+{% block content %}
+
+<h2 style="text-align:center;"> Register to Store</h2>
+<form  action="{% url 'public:signup' %}" method="POST" class="jumbotron">
+    {% csrf_token %}
+    <h5>{{ form.as_p }}</h5>
+    <p style="color:red;">{{form.fielderrors}}</p>
+    <input type="submit" value="SignUp">
+</form>
+
+{% endblock content %}

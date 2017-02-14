@@ -1,0 +1,65 @@
+{% extends "public/header1.html" %}
+
+{% block title %} Welcome {{username}} {% endblock title %}
+{% block content %}
+{{ data }}
+{% for dat in data %}
+    {{dat.productName}}
+{% endfor %}
+
+{% for dat in data %}
+<a class ="showdiv">
+<div class="jumbotron table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  {% if dat.modelNo != "" %}
+                  <th>Model</th>
+                  {% endif %}
+                  {% if dat.modelDate != None %}
+                  <th>Model Date</th>
+                  {% endif %}
+                  <th>Price</th>
+                </tr>
+            </thead>
+              <tbody>
+                <tr>
+                  <td>{{ dat.productName}}</td>
+                  {% if dat.modelNo != "" %}
+                        <td>{{ dat.modelNo }}</td>
+                  {% endif %}
+                  {% if dat.modelDate != None %}
+                        <td>{{ dat.modelDate }}</td>
+                  {% endif %}
+                  <td>{{ dat.boughtprice }}</td>
+              </tr>
+          </tbody>
+      </table>
+
+</div>
+</a>
+
+<div class="warranty hidden">
+{% for info in dat.warrantyagents_set.all %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Warranty Agents Name</th>
+      <th>Location</th>
+      <th>Phone No</th>
+    </tr>
+</thead>
+  <tbody>
+    <tr>
+      <td>{{ info.warantyAgentName}}</td>
+            <td>{{ info.warantyAgentLocation }}</td>
+            <td>{{ info.WarantyAgentPhoneNumber }}</td>
+  </tr>
+</tbody>
+</table>
+{% endfor %}
+
+</div>
+{% endfor %}
+{% endblock content %}

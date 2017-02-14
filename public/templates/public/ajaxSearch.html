@@ -1,0 +1,35 @@
+{% for dat in data %}
+<div class="jumbotron table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  {% if dat.modelNo != "" %}
+                  <th>Model</th>
+                  {% endif %}
+                  {% if dat.modelDate != None %}
+                  <th>Model Date</th>
+                  {% endif %}
+                  <th>Price</th>
+                </tr>
+            </thead>
+              <tbody>
+                <tr>
+                  <td>{{ dat.productName}}</td>
+                  {% if dat.modelNo != "" %}
+                        <td>{{ dat.modelNo }}</td>
+                  {% endif %}
+                  {% if dat.modelDate != None %}
+                        <td>{{ dat.modelDate }}</td>
+                  {% endif %}
+                  <td>{{ dat.boughtprice }}</td>
+              </tr>
+          </tbody>
+      </table>
+</div>
+{% endfor %}
+<p>
+search:{{ search }}
+catagory:{{ catagory }}
+by:{{ by }}
+</p>

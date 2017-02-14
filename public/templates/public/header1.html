@@ -62,42 +62,20 @@
         		<span class="icon-bar"></span>
         		<span class="icon-bar"></span>
       		</button>
-      		<a class="navbar-brand" href="{%url 'public:index'%}">Public Store</a>
+      		<a class="navbar-brand" href="{%url 'public:publicmain'%}">My Product Details</a>
     		</div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       		<ul class="nav navbar-nav">
-        		<li><a class="navCat">Agricultural Products</a><span class="sr-only">(current)</span></a></li>
-        <li><a class="navCat">Machineries</a></li>
+        		<li><a>Welcome {{ username }}</a><span class="sr-only">(current)</span></a></li>
+        <li></li>
 		<li></li>
       </ul>
 	   <ul class="nav navbar-nav navbar-right">
-		   <li><a href="{% url 'public:login' %}">Login</a></li>
-		   <li><a href="{% url 'public:signup' %}">SignUp</a></li>
+		   <li><a href="{% url 'public:logout' %}">Logout</a></li>
 	   </ul>
 	  <br><br><hr>
-      <form class="navbar-form navbar-left" id="searchForm">
-		  {% csrf_token %}
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" id="searchbar">
-        </div>
-
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle sorttoggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a class="sortby">Price</a></li>
-			<li role="separator" class="divider"></li>
-            <li><a class="sortby">A-Z</a></li>
-			<li role="separator" class="divider"></li>
-            <li><a class="sortby">Manufacture Date</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a class="sortby">Reset</a></li>
-          </ul>
-        </li>
-      	</ul>
     	</div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
 		</nav>

@@ -1,0 +1,24 @@
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'public/style.css' %}" />
+{% endblock stylesheet %}
+
+{% block upperheading %}<p>Store Heading</p>{% endblock upperheading %}
+
+{% block fornotification %}
+<p>notification</p>
+{% endblock fornotification %}
+
+{% block foractivity %}
+<p>Activities</p>
+{% endblock foractivity %}
+
+{% block forsearch %}
+{% include "public/includes/snippet.html" %}
+<p> Welcome to public index page
+</p>{% endblock forsearch%}
+
+{% block fordashboard %}
+<p> Dashboard </p>
+{% endblock fordashboard %}
+-->
