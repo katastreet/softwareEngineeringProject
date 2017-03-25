@@ -1,0 +1,98 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title></title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+</head>
+<body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
+	<div id="body">
+      <div class="topHeader">
+          {% block upperheading %} {% endblock upperheading %}
+	  </div>
+	  <div class="notificationArea">
+            {% block fornotification%} {% endblock fornotification %}
+		</div>
+		<div class="activityArea">
+            {% block foractivity %} {% endblock foractivity%}
+          </div>
+
+           <div class="searchArea">
+            {% block forsearch%} {% endblock forsearch%}
+          </div>
+
+           <div class="dashboardArea">
+            {% block fordashboard%} {% endblock fordashboard%}
+          </div>
+
+		 </div>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{% block title %}{% endblock title%}</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+	{% block stylesheet %}{% endblock stylesheet %}
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			<nav class="navbar navbar-inverse" style="background-color:#3c6772">
+  			<div class="container-fluid">
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+      		<a class="navbar-brand" href="{%url 'public:publicmain'%}">Office Purchase Analysis</a>
+    		</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ul class="nav navbar-nav">
+        		<li><a>Welcome {{ username }}</a><span class="sr-only">(current)</span></a></li>
+        <li></li>
+		<li></li>
+      </ul>
+	  <br><br><hr>
+    	</div><!-- /.navbar-collapse -->
+  		</div><!-- /.container-fluid -->
+		</nav>
+		</div>
+		<div class="row content">
+			{% block content %}{% endblock content %}
+
+		</div>
+	</div>
+
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>
+
+
+	<script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/Chart.min.js' %}"></script>
+	{% block jquery %}{% endblock jquery %}
+</body>
+
+</html>

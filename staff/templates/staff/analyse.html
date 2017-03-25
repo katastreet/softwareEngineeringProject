@@ -1,0 +1,54 @@
+{% extends "staff/header1.html" %}
+
+{% block title %}Analysis {% endblock title %}
+{% block jquery %}
+<script>
+var endpoint = "{% url 'staff:data' %}";
+var defaultData = [];
+var labels = [];
+var labesl
+$.ajax({
+    method:"GET",
+    url: endpoint,
+    success: function(data){
+        labels = data.labels;
+        defaultData = data.defaultData;
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total annual purchase of Office',
+                    data: defaultData,
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',],
+                }],
+
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    },
+    error: function(error_data){
+        console.log(error_data);
+    }
+});
+
+</script>
+{% endblock jquery %}
+
+{% block content %}
+<canvas id="myChart" width="250" height="80"></canvas>
+
+
+
+
+{% endblock content %}
